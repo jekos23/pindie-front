@@ -1,4 +1,5 @@
-export const BASE_URL = "https://buhtig.nomoredomainswork.ru/api";
+
+export const BASE_URL = 'jekos.frontend.spb.nomorepartiesco.ru'
 
 export const endpoints = {
   games: `${BASE_URL}/games`,
