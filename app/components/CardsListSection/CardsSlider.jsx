@@ -48,15 +48,20 @@ export const CardsSlider = (props) => {
   return (
     <div className={`swiper ${Styles["slider"]}`}>
       <ul className={`swiper-wrapper ${Styles["slider-wrapper"]}`}>
-        {props.data.map((item, i) => {
-          return (
+      {Array.isArray(props.data) && props.data.length > 0 ? (
+          props.data.map((item, i) => (
             <li className={`swiper-slide ${Styles["slide"]}`} key={i}>
               <Link href={`/games/${item.id}`}>
                 <Card {...item} />
               </Link>
             </li>
-          );
-        })}
+          ))
+        ) : (
+          // Альтернативный рендеринг, например, сообщение об ошибке или заглушка
+          <li className="swiper-slide">
+            Нет данных для отображения
+          </li>
+        )} 
       </ul>
       <div className={`swiper-pagination ${Styles["pagination"]}`}></div>
     </div>
