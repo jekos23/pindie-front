@@ -12,5 +12,4 @@ export const useGetDataByCategory = (endpoint, category) => {
   }, [])
   console.log("проверка 1", data)
   return data
-  
 }
